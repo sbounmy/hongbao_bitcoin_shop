@@ -96,5 +96,5 @@ Rails.application.configure do
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
   # Fixes Psych::DisallowedClass (Tried to dump unspecified class: Symbol(:minimum_item_total)):
-  config.active_record.yaml_column_permitted_classes << Symbol
+  config.active_record.yaml_column_permitted_classes = [Symbol, Date, Time, ActiveSupport::TimeWithZone, ActiveSupport::TimeZone]
 end
